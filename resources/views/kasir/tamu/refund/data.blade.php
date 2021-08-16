@@ -1,0 +1,80 @@
+@extends('frontend.layout-frontend.master')
+
+@section('content')
+
+<div class="container-fluid">
+    <div class="page-title pt-3">
+        <div class="row">
+            <div style="color: #7366FF;" class="col-6">
+                <h3>Data Refund Tamu</h3>
+            </div>
+            <div class="col-6">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                    <li class="breadcrumb-item">Dashboard</li>
+                    <li class="breadcrumb-item active">Data Refund Tamu</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-xl-6">
+
+            </div>
+            <div class="col-6 align-self-end">
+                <div class="pull-right">
+
+                    <a href="{{ url('kasirrefun_c') }}"><button class="btn btn-success" type="button" title="">Tambah Barang</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="card">
+
+        <div class="card-body table-responsive">
+            <table class="display" id="advance-12">
+                <thead>
+                    <tr>
+                        <!-- loop data -->
+                        <th>No</th>
+                        <th>Nama Tamu</th>
+                        <th>Tanggal Refund</th>
+                        <th>Nama Produk</th>
+                        <th>Harga produk</th>
+                        <th>Alasan Refund</th>
+                        <th>Total Tabungan</th>
+
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                    <?php $no = 1; ?>
+                    @foreach ($refuns as $value => $refun)
+                    <tbody>
+                        <!-- loop data -->
+                        <tr>
+                            <td>{{$no++}}</td>
+                            <td>{{$refun->nama_ta}}</td>
+                            <td>Senin - {{$refun->tanggal_ref}}</td>
+                            <td>{{$refun->produk}}</td>
+                            <td>{{$refun->harga}}</td>
+
+                            <td>{{$refun->alasan}}</td>
+                            <td>{{$refun->total_tab}}</td>
+                            <td>{{$refun->status}}</td>
+                            <td><a href="#"><button class="icon-file btn btn-primary" type="button" title=""></button></a><a href="{{ url('kasir_refun/'.$refun->id) }}"><button class="icon-eye btn btn-success" type="button" title=""></button></a></td>
+
+                        </tr>
+                        <!-- loop data -->
+                    </tbody>
+                    @endforeach
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+@endsection()
