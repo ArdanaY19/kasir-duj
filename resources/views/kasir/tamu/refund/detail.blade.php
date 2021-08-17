@@ -30,7 +30,7 @@
 
                                 <div class="media">
                                     <div style="margin-top: 10px;" class="media-body">
-                                        <h5> <span class="first_name_0">Bucky </span><span class="last_name_0">Barnes</span></h5>
+                                        <h5> <span class="first_name_0">{{$r->tamu->nama}}</span><span class="last_name_0"></span></h5>
                                     </div>
 
                                 </div>
@@ -50,7 +50,7 @@
                                                             <th style="font-size: 14px;"> :</th>
                                                             <!-- loop data -->
                                                             <th style="font-size: 14px;">
-                                                                <p>Noval</p>
+                                                                <p>{{$r->tamu->staff}}</p>
                                                             </th>
                                                         </tr>
                                                     </tbody>
@@ -95,10 +95,10 @@
                                                                                 <tr>
                                                                                     <td>1</td>
                                                                                     <td>
-                                                                                        laptop
+                                                                                        {{$r->stok->produk}}
                                                                                     </td>
-                                                                                    <td>10.000</td>
-                                                                                    <td>baru pakai rusak</td>
+                                                                                    <td>{{$r->stok->harga_retail}}</td>
+                                                                                    <td>{{$r->alasan}}</td>
 
                                                                                     </td>
                                                                                 </tr>
@@ -134,7 +134,7 @@
                                                                             <th style="font-size: 14px;"> :</th>
                                                                             <!-- loop data -->
                                                                             <th style="font-size: 14px;">
-                                                                                <p>06-12-2021</p>
+                                                                                <p>{{$r->tanggal}}</p>
                                                                             </th>
                                                                         </tr>
                                                                         <tr>
@@ -142,7 +142,7 @@
                                                                             <th style="font-size: 14px;"> :</th>
                                                                             <!-- loop data -->
                                                                             <th style="font-size: 14px;">
-                                                                                <p>Rp. 12.000</p>
+                                                                                <p>{{$r->total}}</p>
                                                                             </th>
                                                                         </tr>
                                                                         <tr>
@@ -150,7 +150,7 @@
                                                                             <th style="font-size: 14px;"> :</th>
                                                                             <!-- loop data -->
                                                                             <th style="font-size: 14px;">
-                                                                                <p>Diverifikasi</p>
+                                                                                <p>{{$r->status_verif}}</p>
                                                                             </th>
                                                                         </tr>
 
@@ -174,7 +174,8 @@
 
                                         <div class="card-body">
 
-                                            <a href="#"><button class="icon-file btn btn-primary" type="button" title=""></button></a>
+                                            <a href="#"><button class="btn btn-primary" type="button" title="">Unduh Pernyataan</button></a>
+
                                         </div>
                                         <div class="card-body">
 

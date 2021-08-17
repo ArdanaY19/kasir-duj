@@ -127,4 +127,16 @@ Route::group(['middleware' => ['auth', 'CheckRole:cabang']], function () {
 
 Route::group(['middleware' => ['auth', 'CheckRole:kasir']], function () {
     Route::get('/kasir/kasir', [AuthController::class, 'kasir']);
+
+    Route::get('ka_stok', [StokController::class, 'ka_stok']);
+    Route::get('ka_stok/{id}', [StokController::class, 'ka_stok_det']);
+
+    Route::get('ka_refund', [RefundController::class, 'ka_refund']);
+    Route::get('ka_refund/{id}', [RefundController::class, 'ka_refund_det']);
+
+    Route::get('ka_tabungan', [TabunganController::class, 'ka_tabungan']);
+    Route::get('ka_tabungan/{id}', [TabunganController::class, 'ka_tabungan_det']);
+
+    Route::get('ka_trtamu', [TransaksiController::class, 'ka_trtamu']);
+    Route::get('ka_trtamu/{id}', [TransaksiController::class, 'ka_trtamu_det']);
 });

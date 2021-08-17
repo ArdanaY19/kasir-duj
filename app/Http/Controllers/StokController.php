@@ -89,4 +89,18 @@ class StokController extends Controller
 
         return view('kc.barang.detail', compact('s'));
     }
+
+    public function ka_stok()
+    {
+        $stoks = Stok::get();
+
+        return view('kasir.tamu.barang.data', compact('stoks'));
+    }
+
+    public function ka_stok_det($id)
+    {
+        $s = Stok::findOrFail($id);
+
+        return view('kasir.tamu.barang.detail', compact('s'));
+    }
 }

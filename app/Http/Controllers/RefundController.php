@@ -57,4 +57,18 @@ class RefundController extends Controller
 
         return view('kc.refund.detail', compact('r'));
     }
+
+    public function ka_refund()
+    {
+        $refunds = RefundTamu::get();
+
+        return view('kasir.tamu.refund.data', compact('refunds'));
+    }
+
+    public function ka_refund_det($id)
+    {
+        $r = RefundTamu::findOrFail($id);
+
+        return view('kasir.tamu.refund.detail', compact('r'));
+    }
 }

@@ -36,17 +36,17 @@
                         </tr>
                     </thead>
                     <?php $no = 1; ?>
-                    @foreach ($stoks as $value => $stok)
+                    @foreach ($stoks as $value => $s)
                     <tbody>
                         <!-- loop data -->
                         <tr>
                             <td>{{$no++}}</td>
                             <td>
-                                {{$stok->produk}}
+                                {{$s->produk}}
                             </td>
-                            <td>{{$stok->harga_retail}}</td>
-                            <td>{{$stok->stok}}</td>
-                            <td><a href="{{ url('kasir_stok/'.$stok->id) }}"><button class="btn btn-success" type="button" title="">Detail</button></a></td>
+                            <td>{{$s->harga_retail}}</td>
+                            <td>{{$s->stok}}</td>
+                            <td><a href="{{ url('ka_stok/'.$s->id) }}"><button class="btn btn-success" type="button" title="">Detail</button></a></td>
 
                         </tr>
                         <!-- loop data -->

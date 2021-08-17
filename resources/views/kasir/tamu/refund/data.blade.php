@@ -51,26 +51,26 @@
 
                     </tr>
                 </thead>
-                    <?php $no = 1; ?>
-                    @foreach ($refuns as $value => $refun)
-                    <tbody>
-                        <!-- loop data -->
-                        <tr>
-                            <td>{{$no++}}</td>
-                            <td>{{$refun->nama_ta}}</td>
-                            <td>Senin - {{$refun->tanggal_ref}}</td>
-                            <td>{{$refun->produk}}</td>
-                            <td>{{$refun->harga}}</td>
+                <?php $no = 1; ?>
+                @foreach($refunds as $r)
+                <tbody>
+                    <!-- loop data -->
+                    <tr>
+                        <td>{{$no++}}</td>
+                        <td>{{$r->tamu->nama}}</td>
+                        <td>Senin - {{$r->tanggal}}</td>
+                        <td>{{$r->stok->produk}}</td>
+                        <td>{{$r->stok->harga_retail}}</td>
 
-                            <td>{{$refun->alasan}}</td>
-                            <td>{{$refun->total_tab}}</td>
-                            <td>{{$refun->status}}</td>
-                            <td><a href="#"><button class="icon-file btn btn-primary" type="button" title=""></button></a><a href="{{ url('kasir_refun/'.$refun->id) }}"><button class="icon-eye btn btn-success" type="button" title=""></button></a></td>
+                        <td>{{$r->alasan}}</td>
+                        <td>{{$r->total}}</td>
+                        <td>{{$r->status_verif}}</td>
+                        <td><a href="#"><button class="icon-file btn btn-primary" type="button" title=""></button></a><a href="{{ url('ka_refund/'.$r->id) }}"><button class="icon-eye btn btn-success" type="button" title=""></button></a></td>
 
-                        </tr>
-                        <!-- loop data -->
-                    </tbody>
-                    @endforeach
+                    </tr>
+                    <!-- loop data -->
+                </tbody>
+                @endforeach
             </table>
         </div>
     </div>

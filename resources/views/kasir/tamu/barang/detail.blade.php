@@ -42,8 +42,8 @@
                                                     <tbody>
                                                         <tr>
                                                             <!-- loop data -->
-                                                            <h6> Sepatu</h6>
-                                                            <p class="email_add_0">Rp. 10.000</p>
+                                                            <h6> {{$s->produk}}</h6>
+                                                            <p class="email_add_0">{{$s->harga_retail}}</p>
                                                         </tr>
                                                         <tr>
 
@@ -51,7 +51,7 @@
                                                             <th style="font-size: 12px;"> :</th>
                                                             <!-- loop data -->
                                                             <th style="font-size: 12px;">
-                                                                <p>{{$stok->stok}}</p>
+                                                                <p>{{$s->stok}}</p>
                                                             </th>
 
                                                         </tr>
